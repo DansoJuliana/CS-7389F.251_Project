@@ -158,6 +158,75 @@ python run.py
 - Sensitive to image modification (resizing/compression breaks extraction)
 - Do not support JPEG (with robust embedding)
 
+---
+
+## 📊 Results & Evaluation
+
+This section presents a comparison between the **proposed method (SteganoCrypt)** and the baseline **LSB_PLS** in terms of:
+
+- ⏱️ Execution Time  
+- 📉 Mean Squared Error (MSE)  
+- 📈 Peak Signal-to-Noise Ratio (PSNR)  
+
+---
+
+## 🔐 SteganoCrypt (Proposed Method)
+
+| Image | Time (seconds) | MSE | PSNR (dB) |
+|------|----------------|------|-----------|
+| Image 1 | 0.4606 | 0.0387 | 62.2526 |
+| Image 2 | 0.5654 | 0.0112 | 67.6203 |
+| Image 3 | 0.7016 | 0.0076 | 69.3488 |
+| Image 4 | 0.7387 | 0.0101 | 68.1024 |
+| Image 5 | 0.7549 | 0.0081 | 69.0554 |
+| Image 6 | 9.8080 | 0.0003 | 83.1806 |
+| Image 7 | 17.7793 | 0.0001 | 87.6739 |
+| Image 8 | 3.0384 | 0.0008 | 79.0358 |
+| Image 9 | 13.3037 | 0.0002 | 84.3432 |
+
+---
+
+## 🔓 LSB_PLS (Baseline Method)
+
+| Image | Time (seconds) | MSE | PSNR (dB) |
+|------|----------------|------|-----------|
+| Image 1 | 0.1342 | 0.0973 | 58.2486 |
+| Image 2 | 0.2505 | 0.0282 | 63.6330 |
+| Image 3 | 0.3592 | 0.0188 | 65.4004 |
+| Image 4 | 0.2548 | 0.0247 | 64.2109 |
+| Image 5 | 0.3408 | 0.0200 | 65.1101 |
+| Image 6 | 7.1385 | 0.0008 | 78.9903 |
+| Image 7 | 20.6853 | 0.0003 | 83.7300 |
+| Image 8 | 2.8216 | 0.0020 | 75.1186 |
+| Image 9 | 8.7704 | 0.0006 | 80.4164 |
+
+---
+
+## 📌 Key Observations
+
+- ✅ **Higher PSNR (Better Image Quality):**  
+  SteganoCrypt consistently achieves higher PSNR values across all images.
+
+- ✅ **Lower MSE (Less Distortion):**  
+  The proposed method shows lower reconstruction error, especially for larger images.
+
+- ⚖️ **Trade-off – Execution Time:**  
+  SteganoCrypt is slightly slower due to encryption and compression overhead.
+
+- 🔐 **Security Advantage:**  
+  Hybrid encryption (RSA + AES) and randomized embedding make SteganoCrypt significantly more secure than LSB_PLS.
+
+---
+
+## 🏆 Conclusion
+
+The **SteganoCrypt (Proposed Method)** provides:
+- ✔️ Better image quality (higher PSNR)  
+- ✔️ Lower distortion (lower MSE)  
+- ✔️ Stronger security  
+
+with a moderate increase in computational time.
+
 ## 👩‍💻 Author
 
 **Juliana Mantebea Danso**  
@@ -169,4 +238,3 @@ Texas State University
 ## 📜 License
 
 Note: This tool was developed as the resaerch and development part of the course CS-7389: SECURE CYBER PHYSICAL SYSTEMS of Texas State University. It is intended for educational and research purposes.
-
