@@ -1,4 +1,4 @@
-# CS-7389F.251_Project
+# CS-7389F.251 Project
 
 # 🔐 SteganoCrypt (LSB-RAS+AES): (LSB) Steganography with Hybrid (RSA+AES) Cryptography Tool
 
