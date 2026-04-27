@@ -64,8 +64,8 @@ This project implements a **secure image steganography system** that allows you 
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/JulianaMantebeaDanso/SteganoCrypt-tool.git
-cd SteganoCrypt-tool
+git clone https://github.com/DansoJuliana/CS-7389F.251_Project.git
+cd CS-7389F.251_Project
 ```
 
 ### 2. Install Dependencies
@@ -128,11 +128,11 @@ Metrics:
 
 Example Output:
 
-<pre>
+```
 Image 1:
 MSE  = 0.0021
 PSNR = 74.12 dB
-</pre>
+```
 
 ---
 
@@ -162,7 +162,7 @@ python run.py
 
 ## 📊 Results & Evaluation
 
-This section presents a comparison between the **proposed method (SteganoCrypt)** and the baseline **LSB_PLS** in terms of:
+This section presents a comparison between the **proposed method (SteganoCrypt)** and the baseline **Improved LSB (with Pixel Locator Sequence) abbrieviated as LSB+PLS** ([GitHub Link](https://github.com/lostmartian/LSB-Steganography-using-Pixel-Locator-Sequence-With-AES) || [IEEE Paper Link](https://ieeexplore.ieee.org/document/9478162)) in terms of:
 
 - ⏱️ Execution Time  
 - 📉 Mean Squared Error (MSE)  
@@ -186,7 +186,7 @@ This section presents a comparison between the **proposed method (SteganoCrypt)*
 
 ---
 
-## 🔓 LSB_PLS (Baseline Method)
+## 🔓 Improved LSB+PLS (Baseline Method)
 
 | Image | Time (seconds) | MSE | PSNR (dB) |
 |------|----------------|------|-----------|
@@ -198,11 +198,15 @@ This section presents a comparison between the **proposed method (SteganoCrypt)*
 | Image 6 | 7.1385 | 0.0008 | 78.9903 |
 | Image 7 | 20.6853 | 0.0003 | 83.7300 |
 | Image 8 | 2.8216 | 0.0020 | 75.1186 |
-| Image 9 | 8.7704 | 0.0006 | 80.4164 |
+| Image 9 ([Downlaoad image here](https://filesamples.com/samples/image/png/sample_5184%C3%973456.png)*) | 8.7704 | 0.0006 | 80.4164 |
 
+*File size of the high definition 4K Image 7 (with filename `in7.png`) is >25MB (i.e, the size is 34.24MB) and could not be uploaded to the GitHub Repo. You must [downlaoad](https://filesamples.com/samples/image/png/sample_5184%C3%973456.png) and put in the `/images` folder in order to reproduce the results.
 ---
 
 ## 📌 Key Observations
+
+- ✅ **Lowest execution spent on embedding data into images with 4K quality:**  
+  Image 7 (with filename `in7.png`) is a high definition 4K image and when used as input, it achieves lowest execution time when compared to the baseline method (i.e., 20secs for the baseline method against 17secs for our proposed SteganoCrypt method).
 
 - ✅ **Higher PSNR (Better Image Quality):**  
   SteganoCrypt consistently achieves higher PSNR values across all images.
@@ -210,10 +214,10 @@ This section presents a comparison between the **proposed method (SteganoCrypt)*
 - ✅ **Lower MSE (Less Distortion):**  
   The proposed method shows lower reconstruction error, especially for larger images.
 
-- ⚖️ **Trade-off – Execution Time:**  
+- ✅ **Trade-off – Execution Time:**  
   SteganoCrypt is slightly slower due to encryption and compression overhead.
 
-- 🔐 **Security Advantage:**  
+- ✅ **Security Advantage:**  
   Hybrid encryption (RSA + AES) and randomized embedding make SteganoCrypt significantly more secure than LSB_PLS.
 
 ---
